@@ -4,16 +4,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, TemplateView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
-
 from InstaApp.models import UserConnection
-
 from .forms import CustomUserCreationForm
 from .models import InstaUser, Post, UserConnection, Like, Comment
-
-
-# Create your views here.
-class HelloWorld(TemplateView):
-    template_name = 'test.html'
 
 
 class PostsView(LoginRequiredMixin, ListView):
@@ -22,6 +15,9 @@ class PostsView(LoginRequiredMixin, ListView):
     login_url = 'login'
 
     def get_queryset(self):
+        if not self.request.user.is_authenticated:
+            return
+
         current_user = self.request.user
         following = set()
         for conn in UserConnection.objects.filter(creator=current_user).select_related('following'):
@@ -43,7 +39,16 @@ class PostDetailView(LoginRequiredMixin, DetailView):
         return data
 
 
-class PostCreateView(LoginRequiredMixin, CreateView):
+class ExploreView(LoginRequiredMixin, ListView):
+    model = Post
+    template_name = 'explore.html'
+    login_url = 'login'
+
+    def get_queryset(self):
+        return Post.objects.all().order_by('-posted_on')[:20]
+
+
+class PostCreateView(CreateView):
     model = Post
     template_name = 'post_create.html'
     fields = '__all__'
@@ -67,9 +72,16 @@ class SignUp(CreateView):
     template_name = 'signup.html'
 
 
-class UserDetailView(LoginRequiredMixin, DetailView):
+class UserProfile(LoginRequiredMixin, DetailView):
     model = InstaUser
-    template_name = 'user_detail.html'
+    template_name = 'user_profile.html'
+    login_url = 'login'
+
+
+class EditProfile(LoginRequiredMixin, UpdateView):
+    model = InstaUser
+    template_name = 'edit_profile.html'
+    fields = ['profile_pic', 'username']
     login_url = 'login'
 
 

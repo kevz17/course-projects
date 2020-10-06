@@ -30,7 +30,6 @@ class UserAdmin(admin.ModelAdmin):
         FollowingInline,
     ]
 
-# admin.site.register(Post)
 admin.site.register(Post, PostAdmin)
 admin.site.register(InstaUser, UserAdmin)
 admin.site.register(UserConnection)

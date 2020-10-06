@@ -3,7 +3,6 @@ from django.urls import reverse
 from django.contrib.auth.models import AbstractUser
 from imagekit.models import ProcessedImageField
 
-# Create your models here.
 
 class InstaUser(AbstractUser):
     profile_pic = ProcessedImageField(
@@ -48,12 +47,12 @@ class UserConnection(models.Model):
         return self.creator.username + ' follows ' + self.following.username
 
 class Post(models.Model):
-    author = models.ForeignKey( # a foreign key indicate a Many-To-One relationship
-        InstaUser, #foreign key is InstaUser
+    author = models.ForeignKey(
+        InstaUser,
         blank=True,
         null=True,
-        on_delete=models.CASCADE, # delete this author will delete all his posts
-        related_name='posts', # we can use author.posts to get all posts belong to this user
+        on_delete=models.CASCADE,
+        related_name='posts',
         )
     title = models.TextField(blank=True, null=True)
     image = ProcessedImageField(

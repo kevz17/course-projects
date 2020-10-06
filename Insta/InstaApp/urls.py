@@ -1,6 +1,6 @@
 from django.urls import path
 
-from InstaApp.views import (UserDetailView, ExploreView, PostCreateView,
+from InstaApp.views import (EditProfile, ExploreView, PostCreateView,
                             PostDeleteView, PostDetailView, PostsView,
                             PostUpdateView, SignUp, UserProfile, addLike,
                             addComment, toggleFollow)

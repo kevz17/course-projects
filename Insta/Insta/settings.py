@@ -60,6 +60,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Insta.wsgi.application'
 
+LOGIN_REDIRECT_URL = 'home'
+
+LOGOUT_REDIRECT_URL = 'home'
+
+AUTH_USER_MODEL = 'InstaApp.InstaUser'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -110,14 +115,8 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-LOGIN_REDIRECT_URL = 'home'
-
-LOGOUT_REDIRECT_URL = 'home'
-
-AUTH_USER_MODEL = 'InstaApp.InstaUser'

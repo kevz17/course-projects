@@ -116,8 +116,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'home'
 
-LOGOUT_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'home'
 
 AUTH_USER_MODEL = 'InstaApp.InstaUser'

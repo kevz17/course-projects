@@ -1,4 +1,4 @@
-## Final Project - Cat Park
+## Cat Park
 
 #### 1. A review of functionality and features of the web app
 
@@ -69,18 +69,18 @@ Would you use it again in the future?
 
 -   Yes, because PWAs have advantages over traditional web apps and may become closer to native apps in future.
 
-#### 5. A discussion of all the challenges you faced and how you overcame them
+#### 5. A discussion of all the challenges faced and how to overcome them
 
 -   Implementing PWAs features: push notifications and offline access, which has been discussed before in Section 4.
 -   Implementing user authentication and authorization using Json Web Token. Lectures haven’t covered JWT or Session yet. So I have to learn user authorization and authentication from online resources. At first, I used passport-local strategy from passport library to identify the user by comparing the password, but then I found that it was difficult to authenticate the user across the website without using more appropriate way: Json Web Tokens or Sessions. Though JWT is less secure than session, it is easier to implement by referencing online resources. After studying different examples, I managed to implement user authentication and authorization by JWT.
 -   State management using useContext React hook. To better manage the global state like JWT to authenticate the user, I used useContext React hook and put it in the App.js file above routes of different components so that all the page across the website can access to JWT and enforce separated views and functionalities for different users in different roles.
 -   In development mode, the web app could automatically log in after user registered. However, when deployed to Heroku, the login POST (after register POST completed) to the server could not be handled correctly. Due to the deadline, I've changed the automatically logging in to redirecting user to log in page after registration.
 
-#### 6. Highlighting all of the stylistic choices and how your websites behaves when on smaller devices.
+#### 6. Stylistic choices and websites behaviors on smaller devices.
 
 For style, the website used React Bootstrap to keep a consistent theme. The content of each page is rendered in a Card-like container. By using the components, like `<Row>`, `<Col>` from bootstrap, the website is responsive and will automatically change the layout and size when opened by smaller devices.
 
-#### 7. Any technologies you change out or libraries/frameworks you added
+#### 7. Technologies or libraries/frameworks changed or added
 
 -   In order to incorporate the 3rd party API into the website’s commenting and liking functionalities, I modified the original data model shown in the proposal to current one with Cats, CatComments, and Likes added.
 -   Aside from bcrypt for password handling, passport and json-web-token for JWT handling, I’ve added web-push to handle push notifications, moment js to display user-friendly timestamp.

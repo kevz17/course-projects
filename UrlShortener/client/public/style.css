@@ -1,0 +1,91 @@
+h2 {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+form {
+    margin-top: 30px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+.url-input {
+    margin-right: 10px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    width: 50vw;
+}
+
+.urlid-input {
+    width: 30vw;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.url-id {
+    width: 160px;
+}
+
+.shorten-button {
+    width: 81vw;
+    margin: 20px auto 0px;
+}
+
+.result-display {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 100vw;
+    height: 60px;
+    color: #1976d2;
+}
+
+.copy-btn {
+    margin: auto 20px;
+}
+
+.nav-link {
+    text-align: left;
+    color: #ffffff;
+}
+
+.buttons {
+    margin: 20px 10px 20px;
+}
+
+.new-url {
+    width: 50vw;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.count-number {
+    color: #3a77d3;
+    margin: auto 10px;
+}
+
+.note {
+    color: #666464;
+    text-align: left;
+    font-size: small;
+}
+
+.highlight-text {
+    color: #1976d2;
+}
+
+#alert {
+    margin: 10px auto 10px auto;
+    width: 81vw;
+}
+
+#alert-edit {
+    margin: 10px auto 10px auto;
+    width: 50vw;
+}
+
+#shortUrl {
+    width: 50vw;
+    color: #1976d2;
+    border: 0;
+}

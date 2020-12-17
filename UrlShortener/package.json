@@ -1,0 +1,44 @@
+{
+  "name": "assignment3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.ccs.neu.edu/zhiwei86/zhiwei-zhang-assignment3.git"
+  },
+  "author": "Zhiwei Zhang",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "eslint": "^7.13.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.1.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "config": "^3.3.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.15",
+    "react-bootstrap": "^1.4.0",
+    "shortid": "^2.2.16",
+    "valid-url": "^1.0.9"
+  },
+  "engines": {
+    "node": "14.15.1"
+  }
+}

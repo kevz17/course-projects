@@ -1,17 +1,12 @@
 const webpush = require('web-push');
 const dotenv = require('dotenv');
 const User = require('../models/user.model');
-
-const publicVapidKey =
-    'BI-34YjS7EBTAJNZvvMf_w9KvVVOFWkelh-Nbylj2GdgcpE-uRNB3Degvm4oYLQDQMp1svpfu0Y5-Cu0vOJzRUs';
+const publicVapidKey = process.env.VAPID_KEY_PUBLIC;
+const privateVapidKey = process.env.VAPID_KEY_SECRET;
 
 dotenv.config({ path: './config/config.env' });
 
-webpush.setVapidDetails(
-    `${process.env.HOST}`,
-    publicVapidKey,
-    process.env.VAPID_KEY_SECRET
-);
+webpush.setVapidDetails(`${process.env.HOST}`, publicVapidKey, privateVapidKey);
 
 // @desc        Create a subscription
 // @route       POST /subscribe

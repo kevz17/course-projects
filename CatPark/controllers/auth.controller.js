@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 // @desc        Handle user login
-// @route       POST auth/login
+// @route       POST /api/auth/login
 // @access      Public
 exports.handleLogin = async (req, res) => {
     try {
@@ -34,7 +34,7 @@ exports.handleLogin = async (req, res) => {
 };
 
 // @desc        Handle user's account deletion
-// @route       DELETE auth/delete
+// @route       DELETE /api/auth/delete
 // @access      Private
 exports.handleDelete = async (req, res) => {
     try {
@@ -46,7 +46,7 @@ exports.handleDelete = async (req, res) => {
 };
 
 // @desc        Validate user's token
-// @route       POST auth/tokenValidation
+// @route       POST /api/auth/tokenValidation
 // @access      Private
 exports.handleTokenValidation = async (req, res) => {
     try {

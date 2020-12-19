@@ -9,7 +9,7 @@ dotenv.config({ path: './config/config.env' });
 webpush.setVapidDetails(`${process.env.HOST}`, publicVapidKey, privateVapidKey);
 
 // @desc        Create a subscription
-// @route       POST /subscribe
+// @route       POST /api/subscribe
 // @access      Private
 exports.subscribe = async (req, res) => {
     // Get pushSubscription object

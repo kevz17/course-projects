@@ -16,8 +16,7 @@ const Notification = () => {
     const [pushTitle, setPushTitle] = useState('');
     const [pushContent, setPushContent] = useState('');
     const [message, setMessage] = useState({ type: '', content: '' });
-    const applicationServerPublicKey =
-        'BI-34YjS7EBTAJNZvvMf_w9KvVVOFWkelh-Nbylj2GdgcpE-uRNB3Degvm4oYLQDQMp1svpfu0Y5-Cu0vOJzRUs';
+    const applicationServerPublicKey = process.env.VAPID_KEY_PUBLIC;
     const config = {
         headers: {
             'Content-Type': 'application/json',
@@ -114,7 +113,7 @@ const Notification = () => {
     const handlePush = async () => {
         console.log('Push');
         try {
-            await axios.post(`/subscribe`, {
+            await axios.post(`/api/subscribe`, {
                 pushTitle,
                 pushContent,
             });

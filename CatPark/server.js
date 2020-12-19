@@ -48,7 +48,7 @@ connectDB();
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/auth', auth);
+app.use('/api/auth', auth);
 app.use('/api/v1/cats', cats);
 app.use('/api/v1/posts', posts);
 app.use('/api/v1/users', users);
@@ -56,7 +56,7 @@ app.use('/api/v1/comments', comments);
 app.use('/api/v1/catcomments', catComments);
 app.use('/api/v1/likes', likes);
 app.use('/api/v1/profile', profile);
-app.use('/subscribe', subscription);
+app.use('/api/subscribe', subscription);
 
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 

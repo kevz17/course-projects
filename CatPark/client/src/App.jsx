@@ -55,7 +55,11 @@ function App() {
             const config = {
                 headers: { 'x-auth-token': token },
             };
-            const res = await axios.post('/auth/tokenValidation', null, config);
+            const res = await axios.post(
+                '/api/auth/tokenValidation',
+                null,
+                config
+            );
 
             if (res.data) {
                 const res = await axios.get('/api/v1/users/', config);

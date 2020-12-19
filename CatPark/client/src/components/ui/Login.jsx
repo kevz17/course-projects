@@ -31,7 +31,7 @@ const Login = () => {
 
         try {
             const res = await axios.post(
-                '/auth/login',
+                '/api/auth/login',
                 { userName, password },
                 config
             );

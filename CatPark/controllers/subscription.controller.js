@@ -4,7 +4,7 @@ const User = require('../models/user.model');
 const publicVapidKey = process.env.VAPID_KEY_PUBLIC;
 const privateVapidKey = process.env.VAPID_KEY_SECRET;
 
-dotenv.config({ path: './config/config.env' });
+dotenv.config({ path: '../config/config.env' });
 
 webpush.setVapidDetails(`${process.env.HOST}`, publicVapidKey, privateVapidKey);
 
